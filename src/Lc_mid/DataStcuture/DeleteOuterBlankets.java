@@ -12,8 +12,9 @@ public class DeleteOuterBlankets {
         Stack<Character> sta=new Stack<>();
         char[]ch=s.toCharArray();
         for(int i=0;i<ch.length;i++){
-            if(ch[i]=='(')sta.push(ch[i]);
-            else{
+            if(ch[i]=='(') {
+                sta.push(ch[i]);
+            } else{
                 sta.pop();
             }
             if(sta.isEmpty()){

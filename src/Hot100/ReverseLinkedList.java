@@ -11,7 +11,9 @@ public class ReverseLinkedList {
             s.push(temp);
             temp=temp.next;
         }
-        if(s.isEmpty())return null;
+        if(s.isEmpty()) {
+            return null;
+        }
         ListNode newHead = s.pop();
         ListNode t=newHead;
         while(!s.isEmpty()){

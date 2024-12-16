@@ -6,7 +6,9 @@ public class MaxArr {
      }
     public static int maxProduct(int[] nums) {
         int n=nums.length;
-        if(n==1)return nums[0];
+        if(n==1) {
+            return nums[0];
+        }
         int []dpMax=new int[n];
         int []dpMin=new int[n];
         dpMax[0]=nums[0];

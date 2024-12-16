@@ -14,16 +14,21 @@ public class ChangeTheMoney {
         int n=coins.length;
         int ans=0;
         Arrays.sort(coins);
-        if(amount==0)return 0;
-        if(amount<coins[0])return -1;
+        if(amount==0) {
+            return 0;
+        }
+        if(amount<coins[0]) {
+            return -1;
+        }
         for(int i=n-1;i>=0;i--){
             while(i>0&&amount<coins[i]){
                 i--;
-                if(i==0&&amount<coins[i])return -1;
+                if(i==0&&amount<coins[i]) {
+                    return -1;
+                }
             }
             ans+=amount/coins[i];
             amount%=coins[i];
-            if(amount==0)break;
         }
         return (amount==0)?ans:-1;
     }
@@ -33,8 +38,6 @@ public class ChangeTheMoney {
                 // 如果取coins[j], 剩余的钱是 i-coins[j] ,此时最小是 dp[i]=dp[i-coins[j]]+1
                 // 如果不取 coins[j] 剩余钱是 i, 此时最小 dp[i]=dp[i]
         int n=coins.length;
-        if(n==0)return -1;
-        if(amount==0)return 0;
         // dp[i]表示 用coins[]数组实现金额为i的最小硬币数目
         int []dp=new int[amount+1];
         // 先将他们赋为 amount+1 ,这个是不可能实现的(即使全部是1最值也是 amount)

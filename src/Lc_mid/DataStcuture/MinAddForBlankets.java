@@ -15,10 +15,12 @@ public class MinAddForBlankets {
                 s.push(ch[i]);
             }
             else{
-                if(s.empty())count++;
-                else{
-                    if(s.peek()=='(')s.pop();
-                    else{
+                if(s.empty()) {
+                    count++;
+                } else{
+                    if(s.peek()=='(') {
+                        s.pop();
+                    } else{
                         count++;
                     }
                 }

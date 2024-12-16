@@ -3,12 +3,15 @@ package Lc_mid.BitExercise;
 public class XorPostion {
     public boolean doesValidArrayExist(int[] derived) {
         int n=derived.length;
-        if(n==1)return derived[0]==0;
+        if(n==1) {
+            return derived[0]==0;
+        }
         boolean []arr=new boolean[n];
         arr[0]=false;
         for(int i=0;i<n-1;i++){
-            if(derived[i]!=0)arr[i+1]=!arr[i];
-            else{
+            if(derived[i]!=0) {
+                arr[i+1]=!arr[i];
+            } else{
                 arr[i+1]=arr[i];
             }
         }

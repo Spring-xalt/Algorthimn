@@ -12,8 +12,9 @@ public class MinSubStringAfterDeleting {
         int n=c.length;
         Stack<Character> stack=new Stack<>();
         for(int i=0;i<n;i++){
-            if(c[i]!='B'&&c[i]!='D')stack.push(c[i]);
-            else{
+            if(c[i]!='B'&&c[i]!='D') {
+                stack.push(c[i]);
+            } else{
                 if(stack.isEmpty()){
                     stack.push(c[i]);
                 }

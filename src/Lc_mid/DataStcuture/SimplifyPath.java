@@ -1,5 +1,4 @@
 package Lc_mid.DataStcuture;
-
 import java.util.Objects;
 import java.util.Stack;
 

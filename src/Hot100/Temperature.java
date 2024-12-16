@@ -10,7 +10,9 @@ public class Temperature {
     public static int[] dailyTemperatures(int[] temperatures) {
         // 暴力遍历 过不了 73,74,75,71,69,72,76,73  有重复部分需要处理，71的2在75时同样重复了 需要跳过
         int n=temperatures.length;
-        if(n==0)return new int[]{0};
+        if(n==0) {
+            return new int[]{0};
+        }
         int []ans=new int[n];
         int i=0;
         while(i<n-1){
@@ -23,7 +25,9 @@ public class Temperature {
                 }
                 else{
                     j++;
-                    if(j==n)i++;
+                    if(j==n) {
+                        i++;
+                    }
                 }
             }
         }
@@ -32,7 +36,9 @@ public class Temperature {
     public static int[] dailyTemperatures2(int[] temperatures) {
         // 记忆化跳跃
         int n=temperatures.length;
-        if(n==0)return new int[]{0};
+        if(n==0) {
+            return new int[]{0};
+        }
         int []ans=new int[n];
         for(int i=n-2;i>=0;i--){
             int j=i+1;

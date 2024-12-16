@@ -9,11 +9,15 @@ public class TheLonggestUsefulBlankets {
     public static int longestValidParentheses(String s) {
         // O(n^3)
         int n = s.length();
-        if(n==0)return 0;
+        if(n==0) {
+            return 0;
+        }
         int ans=0,count=0;
         for(int i=0;i<s.length()-1;i++){
             for(int j=i;j<s.length();j++){
-                if(UsefulBlankets(s.substring(i,j+1)))count=j-i+1;
+                if(UsefulBlankets(s.substring(i,j+1))) {
+                    count=j-i+1;
+                }
                 ans=Math.max(ans,count);
             }
         }
@@ -26,8 +30,9 @@ public class TheLonggestUsefulBlankets {
                 stack.push(s.charAt(i));
             }
             else{
-                if(stack.isEmpty())return false;
-                else{
+                if(stack.isEmpty()) {
+                    return false;
+                } else{
                     stack.pop();
                 }
             }
@@ -40,7 +45,9 @@ public class TheLonggestUsefulBlankets {
         int l=0,ans=0;
         int n=s.length();
         Stack<Integer> stack = new Stack<>();
-        if(n==0)return 0;
+        if(n==0) {
+            return 0;
+        }
         for(int i=0;i<n;i++){
             if(s.charAt(i)=='('){
                 // 遇到左括号将左括号下标入栈，用于维护需要匹配的左括号下标
