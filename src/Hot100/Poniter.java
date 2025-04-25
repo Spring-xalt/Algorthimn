@@ -53,7 +53,6 @@ public class Poniter {
                 if (x + nums[n - 1] + nums[n - 2] < 0) {
                     continue;
                 }
-            //}
                 int j=i+1,k=n-1;
                 while(j<k){
                     int ans=x+nums[j]+nums[k];
