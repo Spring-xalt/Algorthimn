@@ -1,4 +1,4 @@
-package Lc_mid.SlidingTheWindow;
+package Hot100;
 
 import java.util.HashMap;
 
@@ -37,12 +37,14 @@ public class SumIsKSubArr {
         for(int i=1;i<nums.length;i++){
             arr[i] = arr[i-1]+nums[i];
         }
+
         int res = 0;
         HashMap<Integer,Integer> preCnt=new HashMap<>();
+        // 两数之和的思路
         for (int sj:arr){
             int si=sj-k;
-            if (preCnt.containsKey(si)) { //已遍历元素中存在si
-                res+=preCnt.get(si);  //加上相应的个数
+            if (preCnt.containsKey(si)) {
+                res+=preCnt.get(si);
             }
             // 记录sj出现次数
             preCnt.put(sj, preCnt.getOrDefault(sj, 0) + 1);
